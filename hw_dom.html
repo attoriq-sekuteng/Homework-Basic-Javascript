@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    /> -->
+    <style>
+		table {
+			border:1px solid #b3adad;
+			border-collapse:collapse;
+			padding:5px;
+		}
+		table th {
+			border:1px solid #b3adad;
+			padding:5px;
+			background: #b2b2b2;
+			color: #313030;
+		}
+		table td {
+			border:1px solid #b3adad;
+			text-align:center;
+			padding:5px;
+			background: #ffffff;
+			color: #313030;
+		}
+	</style>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    Nama: <input type="text" id="nama"><br>
+    Umur: <input type="text" id="umur"> <br>
+    Uang Saku: <input type="text" id="saku"><br>
+
+
+    <button onclick="getDataInput()">Submit</button>
+    <br>
+    <br>
+    <table id="tambah_table">
+		<thead>
+			<tr>
+				<th>Nama</th>
+				<th>Umur</th>
+				<th>Uang saku</th>
+				<th rowspan="10">Resume</th>
+			</tr>
+		</thead>
+		<tbody>
+
+		</tbody>
+	</table>
+    <script>
+        function getDataInput(){
+            const nama_input = document.getElementById("nama").value;
+            const umur_input = document.getElementById("umur").value;
+            const saku_input = document.getElementById("saku").value;
+            const table = document.getElementById("tambah_table").getElementsByTagName("tbody")[0];
+            const row = document.createElement("tr");
+            const data_nama = document.createElement("td");
+            const data_umur = document.createElement("td");
+            const data_saku = document.createElement("td");
+            data_nama.textContent = nama_input; 
+            data_umur.textContent = umur_input;
+            data_saku.textContent = saku_input;
+            row.appendChild(data_nama);
+            row.appendChild(data_umur);
+            row.appendChild(data_saku);
+            table.appendChild(row);
+        }
+    </script>
+  </body>
+</html>
